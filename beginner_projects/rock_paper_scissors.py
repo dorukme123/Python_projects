@@ -15,8 +15,7 @@ def get_comp_choices():
 computers_choice = get_comp_choices();
 players_final_c = choices[int(players_choice) - 1];
 
-print("Player Choosed: " + players_final_c);
-print("Computer Choosed: " + computers_choice);
+print("Player Choosed: " + players_final_c + " Computer Choosed: " + computers_choice);
 sleep(2);
 
 if computers_choice == players_final_c:
@@ -27,3 +26,5 @@ elif players_final_c == "rock" and computers_choice == "scissors" or players_fin
     print("Player wins!");
 else:
     print("Error");
+
+#hi

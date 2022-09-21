@@ -1,0 +1,110 @@
+question1=
+test = input()
+list1 = set('АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ абвгдеёжзийклмнопрстуфхцчшщъыьэюя abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+test2 = ''.join(filter(list1.__contains__, test))
+words = test2.split();
+x = len(words); 
+for i in range(x):
+    newstr = words[i];
+    for j in range(len(newstr)-2):
+        k = 3;
+        print(newstr[j:j+k]);
+        k-=1;
+
+question2=
+import datefinder
+
+N = "01.09.1939 Третий Рейх вторгается в Польшу, а 09.03.2021 Шуфутинский переворачивает календарь"
+time_data = datefinder.find_dates(N);
+
+for data in time_data:
+    year = data.year;
+    month = data.month;
+    day = data.day;
+    if(day < 10 and month < 10):
+        print(f"{year}-0{day}-0{month}")
+    elif(day < 10):
+        print(f"{year}-{day}-0{month}")
+    elif(month < 10):
+        print(f"{year}-0{day}-{month}")
+    else:
+        print(f"{year}-{day}-{month}")
+
+question3=
+N = int(input());
+K = int(input());
+if (N > 0 and K <= 10000):
+	left_apples = K % N;
+	answer = (K - left_apples)/N;
+elif (N == 0 and K <= 10000):
+	answer = 0
+print(int(answer));
+
+question4=
+N = input()
+numb = int(N) % 10;
+print(numb)
+
+question5=
+n = int(input())
+hours = (n % 1440) // 60
+minutes = (n % 1440) % 60
+print("%s:%s" % (str(hours), str(minutes).zfill(2)))
+
+question6=
+number1 = int(input());
+number2 = int(input());
+number3 = int(input());
+def switch(number1,number2,number3):
+    if(number1 == number2 == number3):
+        return 3;
+    elif(number1 != number2 != number3):
+        return 0;
+    elif(number1 == number2 or number1 == number3 or number2 == number3):
+        return 2;
+print(switch(number1,number2,number3));
+
+question7=
+A1 = int(input());
+B1 = int(input());
+C1 = int(input());
+A2 = int(input());
+B2 = int(input());
+C2 = int(input());
+if ((A1 == A2 and B1 == B2 and C1 == C2) or
+        (A1 == A2 and B1 == C2 and C1 == B2) or
+        (A1 == C2 and B1 == A2 and C1 == B2) or
+        (A1 == B2 and B1 == A2 and C1 == C2) or
+        (A1 == B2 and B1 == C2 and C1 == A2) or
+        (A1 == C2 and B1 == B2 and C1 == A2)):
+    print('Ящики равны')
+elif ((A1 <= A2 and B1 <= B2 and C1 <= C2) or
+        (A1 <= A2 and B1 <= C2 and C1 <= B2) or
+        (A1 <= C2 and B1 <= A2 and C1 <= B2) or
+        (A1 <= B2 and B1 <= A2 and C1 <= C2) or
+        (A1 <= B2 and B1 <= C2 and C1 <= A2) or
+        (A1 <= C2 and B1 <= B2 and C1 <= A2)):
+    print('Первое поле меньше второго')
+elif ((A1 >= A2 and B1 >= B2 and C1 >= C2) or
+        (A1 >= A2 and B1 >= C2 and C1 >= B2) or
+        (A1 >= C2 and B1 >= A2 and C1 >= B2) or
+        (A1 >= B2 and B1 >= A2 and C1 >= C2) or
+        (A1 >= B2 and B1 >= C2 and C1 >= A2) or
+        (A1 >= C2 and B1 >= B2 and C1 >= A2)):
+    print('Первое поле больше второго')
+else:
+    print('Ящики несопоставимы')
+
+question8=
+N = int(input())
+if (N >= 11 and N <= 14):
+        print(N, 'коров')
+else:
+    A = N % 10
+    if (A == 0 or (A >= 5 and A <= 9)):
+        print(N, 'коров')
+    if (A == 1):
+        print(N, 'корова')
+    if (A >=2 and A <=4):
+        print(N, 'коровы')
+
